@@ -1,5 +1,7 @@
 const users = [
-  { nombre: "Johan", email: "johan225@hotmail.es", pass: "123", saldo: 100 },
+  { nombre: "Johan", email: "Johan@hotmail.com", pass: "johan123*", saldo: 425 },
+  { nombre: "Mali", email: "Mali@hotmail.com", pass: "mali123*", saldo: 200 },
+  { nombre: "Maui", email: "Maui@hotmail.com", pass: "maui123*", saldo: 200 }
 ];
 
 let actualUser = {};

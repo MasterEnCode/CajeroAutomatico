@@ -64,7 +64,8 @@ logIn = (e) =>{
   return false;
 }
 
-clear = () => {
+clear = (actualUser) => {
+  localStorage.setItem('user', JSON.stringify(actualUser));
   $("#ingresarMonto").val("");
   $("#retirarMonto").val("");
   return false;
@@ -98,18 +99,16 @@ ingresarMonto = () => {
         let saldo = user.saldo + monto;
         if (saldo <= 990) {
           user.saldo += monto;
+          actualUser.saldo = user.saldo;
           consultarSaldo(user.saldo);
         }else{
           $("#transaction").text("Saldo maximo alcanzado");
           $("#transaction").css("color", "red");
         }
-      } else {
-        $("#transaction").text("Usuario no pertenece a esta cuenta");
-        $("#transaction").css("color", "red");
       }
     });
   }
-  clear();
+  clear(actualUser);
   return actualUser;
 }
 
@@ -124,18 +123,16 @@ retirarMonto = () =>{
       let saldo = user.saldo - monto;
       if (saldo >= 10) {
         user.saldo -= monto;
+        actualUser.saldo = user.saldo;
         consultarSaldo(user.saldo);
       } else {
         $("#transaction").text("Debes tener al menos 10 pesos");
         $("#transaction").css("color", "red");
       }
-    } else {
-      $("#transaction").text("Monto Excedido a retirar");
-      $("#transaction").css("color", "red");
     }
   });
  }
-  clear();
+  clear(actualUser);
   return actualUser;
 }
 

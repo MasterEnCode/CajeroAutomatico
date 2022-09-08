@@ -11,7 +11,10 @@
     <div class="container">
       <div class="cashier-screen">
         <div class="card">
-          <div class="img"></div>
+          <div class="nav">
+            <div class="img"></div>
+            <div class="logOut"><button type="button" id="logOut">Cerrar Sesion</button></div>
+          </div>
           <div class="info">
             <span>Welcome to your Personal ATM</span>
             <h2 id="msj"></h2>
@@ -21,7 +24,7 @@
                 <span>Email</span>
               </div>
               <div class="inputBox">
-                <input id="pass" type="text" required="required" />
+                <input id="pass" type="password" required="required" />
                 <span>Password</span>
               </div>
               <button type="submit" id="login">LogIn</button>

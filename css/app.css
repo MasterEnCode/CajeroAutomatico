@@ -40,6 +40,19 @@ a {
   height: 100vh;
 }
 
+.nav{
+  display: flex;
+  justify-content: center;
+}	
+
+.nav .logOut{
+  position: absolute;
+  right: 0;
+  margin-right: 2rem;
+  margin-top: 1rem;
+}	
+
+
 .card {
   width: 100vw;
   height: 80vh;
